@@ -7,4 +7,4 @@ prgm_lib is a collection of mostly I/O related functions
 math_lib is a collection of math related functions
 ... hopefully you get the idea.
 
-also, __init__.py is there so that python will know this is being used as a package so you can import from this folder.
+also, \_\_init\_\_.py is there so that python will know this is being used as a package so you can import from this folder.
