@@ -1,5 +1,5 @@
 # PythonLibraries
-Personal collections of reusable and often needed python functions
+Personal collections of reusable and often needed python functions.
 To add them to a project, you can either download and use them,
 or I also suggest trying out git submodules.
 
