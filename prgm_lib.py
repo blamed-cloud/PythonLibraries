@@ -64,6 +64,32 @@ class _GetchWindows:
 
 
 getch = _Getch()
+			
+def get_choice(choice_list, quiet = False):
+	unf = True
+	while unf:
+		if not quiet:
+			for i in range(len(choice_list)):
+				print str(i) + ": " + str(choice_list[i])
+			print "Please enter the int above corresponding to your choice."
+		num = get_int(quiet)
+		if num in range(len(choice_list)):
+			unf = False
+	return choice_list[num]
+	
+def get_choice_escape_codes(choice_list, escape_codes, quiet = False):
+	unf = True
+	while unf:
+		if not quiet:
+			for i in range(len(choice_list)):
+				print str(i) + ": " + str(choice_list[i])
+			print "Please enter the int above corresponding to your choice."
+		num = get_int_escape_codes(escape_codes, quiet)
+		if num in escape_codes:
+			return num
+		if num in range(len(choice_list)):
+			unf = False
+	return choice_list[num]
 
 def get_int(quiet=False):
 	unf=True
