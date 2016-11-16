@@ -190,6 +190,26 @@ def get_str(disallowed_chars=['\\'],quiet=False):
 			unf=False
 	return response
 	
+def get_str_escape_codes(escape_codes, disallowed_chars=['\\'],quiet=False):
+	unf=True
+	while unf:
+		if not quiet:
+			print 'Please enter a string that doesn\'t contain any disallowed characters:'
+		response=str(raw_input())
+		if response in escape_codes:
+			return response
+		char_lst=[l for l in response]
+		fail=False
+		for l in char_lst:
+			if l in disallowed_chars:
+				if not quiet:
+					print 'I\'m sorry, but you are not allowed to use the char \'' + l + '\''
+				fail=True
+				break
+		if not fail:
+			unf=False
+	return response
+	
 def get_allowed_str(allowed_chars,quiet=False):
 	unf = True
 	while unf:
