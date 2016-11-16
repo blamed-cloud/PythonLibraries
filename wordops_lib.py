@@ -150,8 +150,9 @@ def snake_search(word,tiles_list2,xgrid=4,one_d=False,out_tf=False,progress='',p
 #		print possibles,progress
 		for x in possibles:
 			temp_tiles2=tiles_list2
-			temp_tiles2[x]=str(0)
+			temp_tiles2[x] = str(0)
 			outcome=outcome+snake_search(word,temp_tiles2,xgrid,one_d,False,progress,x,-1,[-7,-7])
+			temp_tiles2[x] = word[0]
 	else:
 		if (progress==word):
 			return 1
@@ -180,8 +181,9 @@ def snake_search(word,tiles_list2,xgrid=4,one_d=False,out_tf=False,progress='',p
 			for x in possibles:
 #				print pos,x,is_adjacent(pos,x)
 				temp_tiles2=tiles_list2
-				temp_tiles2[x]=str(num_lets)
-				outcome=outcome+snake_search(word,temp_tiles2,xgrid,one_d,False,progress,x,pos,dr)
+				temp_tiles2[x] = str(num_lets)
+				outcome=outcome + snake_search(word,temp_tiles2,xgrid,one_d,False,progress,x,pos,dr)
+				temp_tiles2[x] = current_let
 	if outcome>=1:
 		if out_tf:
 			return True
