@@ -292,7 +292,8 @@ def arg_flag_ordering(args,flag_argc,flag_re,overwrite=False,unziped_args=False,
 		for x in range(len(flag_argc)):
 			if change==0:
 				flag_args=flag_argc[x]
-				if used[x]==0 and re.search(flag_re[x], args[k], re.I):
+				if used[x]==0 and re.search(flag_re[x], args[k]):
+#				if used[x]==0 and re.search(flag_re[x], args[k], re.I):
 					change=1
 					nap=nap+1
 					if overwrite==False:
@@ -306,7 +307,8 @@ def arg_flag_ordering(args,flag_argc,flag_re,overwrite=False,unziped_args=False,
 						while searching:
 							query=0
 							for regexp in flag_re:
-								if re.search(regexp,str(args[k]),re.I):
+								if re.search(regexp,str(args[k])):
+#								if re.search(regexp,str(args[k]),re.I):
 									query=1
 							if query==0:
 								temp_list.append(args[k])
