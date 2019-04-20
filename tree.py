@@ -26,6 +26,12 @@ class Tree(object):
 	def __len__(self):
 		return len(self.children)
 
+	def __iter__(self):
+		return iter(self.children)
+
+	def __getitem__(self, i):
+		return self.children[i]
+
 	# only prints descendants, not ancestors
 	def prettyStr(self, indent = '\t', level = 0):
 		prefix = str(indent) * int(level)
